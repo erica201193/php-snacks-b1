@@ -7,50 +7,49 @@ Olimpia Milano - Cantù | 55-60 */
 
 $matches = [
     [
-        "hometeam" => "CHICAGO BULLS",
-        "visitingteam" => "NEW YORK KNICKS",
+        "home" => "CHICAGO BULLS",
+        "visiting" => "NEW YORK KNICKS",
         "homescore" => rand(80, 140),
-        "visitingscore" => "",
+        "visitingscore" => rand(80, 140),
     ],
     [
-        "hometeam" => "MIAMI HEAT",
-        "visitingteam" => "DETROIT PISTONS",
-        "homescore" => "",
-        "visitingscore" => "",
+        "home" => "MIAMI HEAT",
+        "visiting" => "DETROIT PISTONS",
+        "homescore" => rand(80, 140),
+        "visitingscore" => rand(80, 140),
     ],
     [
-        "hometeam" => "DALLAS MAVERICKS",
-        "visitingteam" => "MEMPHIS GRIZZLIES",
-        "homescore" => "",
-        "visitingscore" => "",
+        "home" => "DALLAS MAVERICKS",
+        "visiting" => "MEMPHIS GRIZZLIES",
+        "homescore" => rand(80, 140),
+        "visitingscore" => rand(80, 140),
     ],
     [
-        "hometeam" => "LOS ANGELES LAKERS",
-        "visitingteam" => "PHOENIX SUNS",
-        "homescore" => "",
-        "visitingscore" => "",
+        "home" => "LOS ANGELES LAKERS",
+        "visiting" => "PHOENIX SUNS",
+        "homescore" => rand(80, 140),
+        "visitingscore" => rand(80, 140),
     ],
     [
-        "hometeam" => "BOSTON CELTICS",
-        "visitingteam" => "TORONTO RAPTORS",
-        "homescore" => "",
-        "visitingscore" => "",
+        "home" => "BOSTON CELTICS",
+        "visiting" => "TORONTO RAPTORS",
+        "homescore" => rand(80, 140),
+        "visitingscore" => rand(80, 140),
     ],
     [
-        "hometeam" => "LA CLIPPERS",
-        "visitingteam" => "ATLANTA HAWKS",
-        "homescore" => "",
-        "visitingscore" => "",
+        "home" => "LA CLIPPERS",
+        "visiting" => "ATLANTA HAWKS",
+        "homescore" => rand(80, 140),
+        "visitingscore" => rand(80, 140),
     ],
     [
-        "hometeam" => "PHILADELPHIA 76ERS",
-        "visitingteam" => "SACRAMENTO KINGS",
-        "homescore" => "",
-        "visitingscore" => "",
+        "home" => "PHILADELPHIA 76ERS",
+        "visiting" => "SACRAMENTO KINGS",
+        "homescore" => rand(80, 140),
+        "visitingscore" => rand(80, 140),
     ],
 ];
 
-var_dump($matches);
 ?>
 
 
@@ -66,24 +65,25 @@ var_dump($matches);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 </head>
+
 <body>
     <div class="container">
-        <div class="row">
-
+        <h2 class="text-center pt-5 pb-3">08/07/2022 - Football matches:</h2>
+        <div class="row row-cols-2">
         <?php
         for ($i = 0; $i < count($matches); $i++) {
-            $match = $matches[$i];
+            $singleMatch = $matches[$i];
         ?>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <div><?php echo $match["hometeam"] . " " . $utenteCorrente["lastname"] ?></div>
+        <div class="col my-3">
+            <div class="card py-3">
+                <div class="card-body d-flex">
+                    <span><?php echo $singleMatch["home"] . " - " . $singleMatch["visiting"] . " | "?></span>
+                    <span class="fw-bold ms-auto"><?php echo $singleMatch["homescore"] . " - " . $singleMatch["visitingscore"]?></span>
                 </div>
             </div>
-        </div>
 
-            <h2>08/07/2022 - Football matches:</h2>
+        </div>
+        <?php } ?>
         </div>
     </div>
 </body>
